@@ -1,24 +1,36 @@
-let cantidad = prompt("Cuanos estudiantes son");
+let cantidad = prompt("Cuantos estudiantes son");
+let dias = prompt("Cuantos dias son:");
 let alumnosTotales = [];
 
 for(i=0;i<cantidad;i++){
-  alumnosTotales[i] = [prompt("Escriba su nombre "+ (i+1)),0]
-
- 
+  alumnosTotales[i] = [prompt("Escriba su nombre "+ (i+1)),0];
 }
 
 const tomarAsistencia = (nombre,p)=>{
   let presencia = prompt(nombre);
   if(presencia == "p" || presencia == "P"){
-    alumnosTotales[i,1]++;
-  }
+    alumnosTotales[p][1]++;
+}
 }
 
-for(i=0;i<30;i++){
+for(i=0;i<dias;i++){
   for (alumno in alumnosTotales){
    tomarAsistencia(alumnosTotales[alumno][0],alumno);
   }
+}
 
+for(alumno in alumnosTotales){
+  let resultado = `${alumnosTotales[alumno][0]}:<br>
+  ________Asistencias: ${alumnosTotales[alumno][1]} <br>
+  ________Inasistencias: ${dias - alumnosTotales[alumno][1]} <br>
+  `;
+  if(dias-alumnosTotales[alumno][1] >= 2){
+    resultado += " Reprobado por inasistencia <br> <br>";
+  }
+  else{
+    resultado += "<br><br>";
+  }
+  document.write(resultado);
 }
 
 
@@ -101,16 +113,6 @@ for(let i = 8; i<=8 && i>=0; i--){
  document.write(i + "<br>");
 }
 
-*/
-
-
-
-
-
-
-
-
-/* $$Iteraciones
 -
 -
 let persona1 = {
@@ -134,3 +136,4 @@ tiene un celular <b>${celulares}</b> y es <b>${estudios}</b>`;
 document.write(frase)
 
 */
+
