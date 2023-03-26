@@ -21,12 +21,15 @@ const diferenciarNombre = (nombre, p) => {
     return acceso;
 }
 
-for (let i = 0; i <= 2; i++) {
+for (i = 0; i <= 2; i++) {
     nombre[i] = [prompt("Di tu nombre")];
     dinero[i] = [parseInt(prompt("cuanto dinero tienes en USD"))];
+    
     if (dinero[i] >= poteHelado) {
         vuelta[i] = dinero[i] - poteHelado;
+
         muestraVuelta[i] = diferenciarNombre(nombre[i], vuelta[i]);
+
         document.write("Ey " + nombre[i] + " tienes " + dinero[i] + " Puedes comprar 1/4KG de pote o confites " + muestraVuelta[i] + "<br>");
     }
     else if (heladoHelardo <= dinero[i] && dinero[i] < poteHelado) {
