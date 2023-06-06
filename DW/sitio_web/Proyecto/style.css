@@ -1,0 +1,193 @@
+body {
+  background-color: rgb(56, 110, 184);
+  position: relative;
+}
+
+header {
+  font-size: 25px;
+  color: white;
+  text-align: center;
+}
+
+.cancha {
+  position: absolute;
+  display: flex;
+  left: 15%;
+  width: 70%;
+  height: 600px;
+  color: white;
+
+}
+
+/* Izquierda */
+
+.izquierda {
+  border: 5px white solid;
+  width: 50%;
+  display: flex;
+  position: relative;
+  filter: drop-shadow(5px 5px 5px white);
+  background-color: rgba(61, 61, 237, 0.523);
+}
+
+
+
+.arribaizq {
+  border: 5px white solid;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  height: 130px;
+  left: -5px;
+  top: -5px;
+  
+
+}
+
+.medioiz {
+  position: absolute;
+  top: 130px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 8px;
+  left: -5px;
+  right: -5px;
+}
+
+#imageniz,
+.imageniz {
+  right: 10px;
+  left: 5px;
+  width: 95%;
+}
+
+#imageniz{
+  width: 100%;
+  height: 305px;
+}
+
+.imageniz {
+  border: 5px white solid;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  
+}
+
+.productos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px white solid;
+  font-size: 25px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.reglas {
+  border: 5px white solid;
+  display: flex;
+  background-image: url("https://static1.abc.es/media/bienestar/2019/08/02/tenis-abecedario-kgNF--620x349@abc.jpg");
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.inferioriz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -5px;
+  position: absolute;
+  border: 5px white solid;
+  position: absolute;
+  font-size: 25px;
+  top: 441px;
+  width: 100%;
+  height: 140px;
+}
+
+/* Derecha */
+
+.derecha {
+  border: 5px white solid;
+  width: 50%;
+  display: flex;
+  position: relative;
+  filter: drop-shadow(5px 5px 5px white);
+  background-color: rgba(61, 61, 237, 0.523);
+}
+
+.arribader {
+  border: 5px white solid;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: 15px;
+  height: 130px;
+  left: -5px;
+  top: -5px;
+  padding-top: -5px;
+}
+
+.mediode {
+  position: absolute;
+  top: 130px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  left: -5px;
+  right: 5px;
+}
+
+.resultados {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px white solid;
+  height: 150px;
+  font-size: 25px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.calentamiento {
+  border: 5px white solid;
+  display: flex;
+  font-size: 15px;
+  height: 145px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-size: cover;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.imagende {
+  border: 5px white solid;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+}
+#imagende,
+.imagende {
+  width: 100%;
+  height: 305px;
+}

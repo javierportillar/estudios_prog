@@ -1,0 +1,32 @@
+header{
+  background-color: blue;
+  
+  text-align: center;
+ 
+}
+img{
+  border-radius: 80%;
+  border-style: dotted;
+  border-width: 4px;
+  border-color: white;
+}
+body {
+  padding: 25px;
+  font-size: 14px;
+  margin: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: blue;
+}
+h1  {
+  font-size: 38px;
+  color: red;
+  font-style: italic;
+}
+h2{
+  color: green;
+  text-decoration: underline;
+}
+h3{
+  color: orange;
+  letter-spacing: 5px;
+}

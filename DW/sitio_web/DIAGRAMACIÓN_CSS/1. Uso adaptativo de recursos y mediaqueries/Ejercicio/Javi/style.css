@@ -1,0 +1,36 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+ flex-wrap: wrap;
+ 
+}
+
+header{
+  text-transform: uppercase;
+  background: blueviolet;
+  color: white;
+  height: 100px;
+  padding: 5px;
+}
+
+div{
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: left;
+  padding: 5px;
+  align-items: center;
+}
+.texto1{
+  font-size: 26px;
+}
+img[src$=png]{
+  height: 200px;
+  
+}
+
+footer{
+  background: blue;
+  color: white;
+  font-weight: solid;
+  height: 25px;
+}

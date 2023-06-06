@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Dancing Script', cursive;
+  src: url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+}
+
+body {
+  font-family: 'Dancing Script', cursive;
+}
+
+header {
+  background: linear-gradient(to right, rgb(0, 142, 250) 5%, white 50%);
+  width: 100%;
+  height: 5%;
+  color: white;
+  justify-content: space-between;
+  display: flex;
+}
+
+div {
+  width: 100%;
+  text-align: center;
+}
+
+img[src^=logo] {
+  width: 5%;
+  height: 100%;
+  float: right;
+  padding-right: 4%;
+  vertical-align: middle;
+}
+p{
+  line-height: 1em;
+  letter-spacing: 0.5em;
+}
+
+img[src^=paisaje] {
+  width: 75%;
+  border-radius: 5%;
+}
+
+footer{
+  background: rgb(0, 142, 250);
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+
+  body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  header{
+    background: linear-gradient(to right, rgb(0, 68, 255) 5%, rgb(0, 142, 250) 50%);
+  
+  }
+  h1{
+    font-size: 3em;
+  }
+
+  p{
+    line-height: 90%;
+    font-size: 1em;
+    padding: 5px;
+  }
+
+  img[src^=logo] {
+    width: 0%;
+    }
+
+ }
+ @media screen and (max-width: 768px) {
+  footer{
+    background: rgb(5, 244, 5);
+    color: white;
+    text-align: center;
+  }
+}
+
+@media print {
+  body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  header{
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+  }
+  
+  img[src^=logo] {
+    width: 0%;
+    }
+
+  p{
+    line-height: 2em;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    color: blueviolet;
+  }
+
+  img[src^=paisaje] {
+    border-radius: 0%;
+  }
+}

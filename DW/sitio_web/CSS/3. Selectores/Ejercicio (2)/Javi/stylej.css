@@ -1,0 +1,120 @@
+*{
+  line-height: 2;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
+
+h1{
+  color: white;
+  font-size: 36px;
+  /* text-transform: capitalize; Parte de ellos */ 
+  background-color: darkblue;
+  border-radius: 10px;
+  text-align: center;
+  border-color: yellowgreen;
+}
+
+h1::after {
+font-family: 'Font Awesome 5 Free';
+ content: "\2B50";
+}
+
+h1::before{
+  font-family: 'Font Awesome 5 Free';
+  content: "\2B50";
+}
+
+/* Mejor, 2 en 1
+h1::before,
+h1::after{
+    content: '\2B50';
+}
+*/
+
+#title,#ultimoparr{
+color: orange;
+font-size: 20px;
+text-align: center;
+}
+
+/* Te dotos los p busca el primero y el ultimo
+p:last-child,
+p:first-child {
+    color: darkorange;
+    font-size: 20px;
+    text-align: center;
+}
+*/
+
+#title::first-letter{
+  font-size: 40px;
+}
+
+a:visited{
+  color: orange;
+}
+
+a:hover{
+  color: purple;
+}
+
+input,button{
+  font-size: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+/*REVISAR 8 COLOR BORDE*/
+
+input {
+  border: 1px solid darkmagenta;
+}
+
+input::placeholder{
+  border-color: purple;
+  color: purple;
+}
+
+input:focus{
+  color: white;
+  background-color: purple;
+}
+
+button{
+  background-color: purple;
+  color: white;
+  border: none;
+}
+
+button:hover{
+  background-color: orange;
+}
+
+h2:nth-child(even){
+  color: purple;
+  font-style: bold;
+  font-size: 30px;
+}
+
+/* Correcto (creo)
+h2:nth-child(even){
+  color: purple;
+  font-style: bold;
+  font-size: 30px;
+}
+*/
+
+/* Correcto
+h2:nth-child(2n){
+    color: darkmagenta;
+    font-weight: bold;
+    font-size: 30px;
+}
+*/
+
+h3:nth-of-type(2){
+color: orange;
+}

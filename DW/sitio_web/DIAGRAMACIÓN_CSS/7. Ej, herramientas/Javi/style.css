@@ -1,0 +1,17 @@
+header{
+  background: purple;
+  color: white;
+  text-align: center;
+}
+
+p{
+  text-align: center;
+  height: 80%;
+}
+
+img{
+  width: 200px;
+}
+div{
+  text-align: center;
+}

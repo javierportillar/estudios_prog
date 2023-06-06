@@ -1,0 +1,27 @@
+body{
+    color: purple;
+    font-family: sans-serif;
+}
+
+.materias{
+    width: 90%;
+    background: wheat;
+}
+
+.materia{
+    display: flex;
+    background: rgb(180, 238, 151);
+}
+
+.materia .nota{
+    flex-basis: 20px;
+    background: wheat;
+}
+
+.materia div {
+    padding: 20px;
+}
+
+.materia .nombre{
+flex-grow: 1;
+}

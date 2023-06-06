@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio 1 Etiquetas</title>
+  </head>
+  <body>
+    
+    <form action="">
+      <fieldset> <legend><h1>Registro</h1></legend>
+        <p>
+         <label for="nombre">Nombre:</label>
+         <input type="text" placeholder="Ej: Javier Portilla" name="nombre" id="nombre" required>
+        </p>
+         <label for="email">E-mail:</label>
+         <input type="email" placeholder="Ej: raporose@ejemplo.com" name="E-mail" id="E-mail" required>
+         <p>
+         <label for="tel">Edad:</label>
+         <input type="tel" name="tel" id="tel" placeholder="Ej: 25" pattern="[0-500]{1}">
+        </p>
+         <label for="genero">Genero:</label>
+         <input type="radio"name="genero"id="femenino">Femenino
+         <input type="radio" name="genero" id="masculino">Masculino
+         <p>
+         <label for="recomendado">Recomendado por:</label>
+         <select name="" id="">
+          <option value="">Google</option>
+          <option value="">amigo</option>
+          <option value="">Redes Sociales</option>
+         </select>
+        </p>
+         <label for="comentarios">Comentarios:</label>
+         <p>
+         <textarea name="comentarios" id="" cols="30" rows="10"></textarea>
+        </p>
+        <label for="tyc">Acepto  terminos y condiciones</label>
+        <input type="checkbox" name="tyc" id="tyc" required>
+        </p>
+        <input type="submit" value="Enviar">
+      </fieldset>
+    </form>
+  </body>
+</html>

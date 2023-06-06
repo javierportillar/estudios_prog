@@ -1,0 +1,45 @@
+
+body{
+    margin: 0;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    background-image: url('globe.jpeg');
+    height: 125px;
+    
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table{
+    margin: 100px auto;
+    width: 80%;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th,
+td{
+    font-size: 1.5em;
+    padding: 40px;
+    border: 1px solid white;
+    width: 200px;
+    border-radius: 15px 0 15px 0;
+}
+
+th{
+    background: linear-gradient(#051a41, #083659, #356b8c);
+    color: white;
+}
+
+td:nth-child(1):hover{
+    background-image: url('albania.png');
+}
+
+td:nth-child(3):hover{
+    background-image: url('canada.png');
+}

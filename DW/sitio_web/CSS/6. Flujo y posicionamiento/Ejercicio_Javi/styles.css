@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header{
+    background: darkslateblue;
+    padding: 15px;
+    font-weight: 900;
+    width: 100%;
+}
+
+h1{
+    border: 1px solid white;
+    color: white;
+    float: right;
+}
+
+footer{
+    background: blue;
+    border-radius: 50%;
+    color: white;
+    height: 150px;
+    width: 150px;
+    font-size: 25px;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    right: 5%;
+    bottom: 10%;
+}
+
+div[class^='box']{
+    height: 30px;
+    padding: 15px;
+    margin: 5px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+.box-1{
+    background-color: orange;
+    width: 30px;
+}
+
+.box-2{
+    background-color: purple;
+    width: 30px;
+}
+
+.box-3{
+    background-color:turquoise;
+    flex: 1 1 25%;
+}
+
+div[class^='container']{
+    width: 30%;
+    height: 500px;
+    background-color: darkcyan;
+    border: 1px solid white;
+    display: flex;
+}
+.container-1{
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+.container-2{
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.box-2:nth-child(2){
+    border: 5px turquoise solid;
+    position: absolute;
+    right: 0;
+}
+
+.container-3{
+    align-items: center;
+    flex-wrap: wrap;
+}

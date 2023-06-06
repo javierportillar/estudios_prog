@@ -1,0 +1,187 @@
+body {
+  background-color: rgb(56, 110, 184);
+  position: relative;
+}
+
+header {
+  font-size: 25px;
+  color: white;
+  text-align: center;
+}
+
+/****** Cuerpo de la cancha ******/
+
+.cancha {
+  position: absolute;
+  display: flex;
+  left: 15%;
+  width: 70%;
+  color: white;
+}
+
+.lados {
+  border: 5px white solid;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  filter: drop-shadow(5px 5px 5px white);
+  background-color: rgba(61, 61, 237, 0.523);
+}
+
+.upd, .upi {
+  border: 3px white solid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 15px;
+  height: 120px;
+}
+
+.medio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.inferior{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: 3px white solid;
+  font-size: 25px;
+  width: 100%;
+  height: 125px;
+}
+
+/* Izquierda */
+
+#imageniz{  
+  width: 100%;
+  height: 300px;
+}
+
+.imageniz {
+  box-shadow: inset 0 0 0 3px white;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  
+}
+
+.productos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 3px white;
+  font-size: 25px;
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.reglas {
+  box-shadow: inset 0 0 0 3px white;
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://static1.abc.es/media/bienestar/2019/08/02/tenis-abecedario-kgNF--620x349@abc.jpg");
+  background-size: cover;
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.efecto{
+  filter: brightness(5%);
+  width: 100%;
+}
+
+
+/* Derecha */
+
+.resultados {
+  display: flex;
+  flex-wrap:  wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 3px white;
+  font-size: 25px;
+
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+#ubicacion{
+  background-image: url("https://www.vallparc.com/wp-content/uploads/2020/06/pistas-tenis.jpg");
+  background-size: cover;
+}
+
+th{
+background-color: rgb(0, 102, 255);
+color: white;
+}
+
+td{
+  background-color: white;
+  color: rgb(0, 102, 255);
+}
+.calentamiento {
+  box-shadow: inset 0 0 0 3px white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 15px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.imagende {
+  box-shadow: inset 0 0 0 3px white;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+#imagende{
+  width: 100%;
+  height: 300px;
+}
+
+/* Hoover Para derecha */
+
+.upd:active{
+  background: rgb(0, 102, 255);
+}
+
+.imagende:hover{
+content: 'Clases privadas'!important;
+filter: opacity(50%);
+}
+
+table:hover:nth-child(2n){
+  color: white;
+  background-color: rgb(0, 50, 124);
+}
+td:hover{
+  color: white;
+  background-color: rgb(0, 50, 124);
+}

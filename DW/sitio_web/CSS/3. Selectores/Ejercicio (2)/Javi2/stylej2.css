@@ -1,0 +1,85 @@
+*{
+  line-height: 2;
+}
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+line-height: 10px;
+}
+
+h1{
+  color: white;
+  text-transform: uppercase;
+  background-color: darkblue;
+  text-align: center;
+}
+
+h1:before,h1::after{
+font-family: 'Font Awesome 5 Free'; /*Hacer uso de lbreria*/
+content: '\2B50';
+font-size: 36px;
+border: 10px;
+}
+
+p:first-child,
+p:last-child{
+  color: orange;
+  font-size: 20px;
+  text-align: center;
+}
+
+#title::first-letter{
+font-size: 40px;
+}
+
+a:visited{
+  color: orange;
+
+}
+
+a:hover{
+  color: purple;
+}
+
+input,button{
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+input{
+  text-align: center;
+  border: 1px purple solid;
+}
+
+input::placeholder{
+  color: purple;
+}
+
+input:focus::placeholder{
+color: white;
+}
+
+input:focus{
+  background-color: purple;
+}
+
+button{
+  background-color: purple;
+  border: none;
+  color: white;
+}
+
+button:hover{
+  background-color: orange;
+}
+
+h2:nth-child(2n){
+  font-style: bold;
+  font-size: 30px;
+  color: purple;
+}
+
+h3:nth-of-type(2){
+  color: orange;
+}
