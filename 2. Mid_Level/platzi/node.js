@@ -25,4 +25,3 @@ multi.onclick = () => {
     let n2 = document.querySelector('.no2').value;
     text.innerHTML += `El valor de la Multiplicación es= ${picar(n1,n2)} <br>`;
 };
-
