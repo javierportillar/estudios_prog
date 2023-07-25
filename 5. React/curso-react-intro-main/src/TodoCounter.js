@@ -1,8 +1,8 @@
 import './TodoCounter.css';
 
-function TodoCounter({total,complete}){
+function TodoCounter({total,completed}){
     return(
-      <h1>Hiciste {complete} de {total} Todos</h1>
+      <h1 className='TodoCounter'>Hiciste <span>{completed}</span> de <span>{total}</span> Todos</h1>
     );
   }
 
