@@ -4,8 +4,7 @@ export const CreateTodoButton = () => {
   return (
     <button className="CreateTodoButton" 
     onClick={(event) => {
-      console.log("Hola")
-      console.log(event.target)
+    let newActividad= event.prompt("Cual es el nombre de la actividad?")
       }}>
       +
     </button>

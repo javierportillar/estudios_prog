@@ -7,8 +7,8 @@ import { Sumador } from './sumador';
 import React from 'react';
 
 const componentes = [{text: 'Pelar papa', completed:true },
-{text: 'Sacar a Krono y Hana', completed:true },
-{text: 'Jugar', completed:true },
+{text: 'Sacar a Krono y Hana', completed:false },
+{text: 'Jugar', completed:false },
 {text: 'Comer', completed:false },
 {text: 'Dormir', completed: false}]
 
@@ -18,7 +18,9 @@ function App() {
 
   const findTodos = todos.filter(
     (todo) =>{
-      return todo.text.toLowerCase().toUpperCase().includes(searchValue) }
+      const constMin = todo.text.toLowerCase(); // Convertir a minusculas la constante componentes
+      const searchText =  searchValue.toLowerCase(); // ''  '' La entrada de busqueda
+      return constMin.includes(searchText) }
     )
 
   const todosCompleted = todos.filter(todo=>todo.completed).length;
@@ -33,7 +35,7 @@ function App() {
       />
     <TodoList>
       {findTodos.map(todo=>(
-      <TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>
+      <TodoItem todos= {todos} key={todo.text} text={todo.text} completed={todo.completed}/>
       ))}
     </TodoList> 
     <CreateTodoButton/>
