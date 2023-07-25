@@ -6,7 +6,7 @@ import { CreateTodoButton } from './CreateTodoButton';
 import { Sumador } from './sumador';
 import React from 'react';
 
-const componentes = [{text: 'Pelar papa', completed:true },
+const componentes = [{text: 'Pelar papa', completed:false },
 {text: 'Sacar a Krono y Hana', completed:false },
 {text: 'Jugar', completed:false },
 {text: 'Comer', completed:false },
@@ -14,7 +14,7 @@ const componentes = [{text: 'Pelar papa', completed:true },
 
 function App() {
   const [searchValue,setSearchValue,] = React.useState('');
-  const [todos,newTodos]= React.useState(componentes);
+  const [todos,setTodos]= React.useState(componentes);
 
   const findTodos = todos.filter(
     (todo) =>{
@@ -25,6 +25,16 @@ function App() {
 
   const todosCompleted = todos.filter(todo=>todo.completed).length;
   const todosTotal = componentes.length;
+
+  const todoDone =(text)=>{
+    const newTodos = [...todos]
+    const todosIndex = newTodos.findIndex(
+      (todo)=> todo.text == text
+    ) 
+
+    newTodos[todosIndex].completed= true;
+    setTodos(newTodos);
+  }
   return (
     
     <>
@@ -35,7 +45,11 @@ function App() {
       />
     <TodoList>
       {findTodos.map(todo=>(
-      <TodoItem todos= {todos} key={todo.text} text={todo.text} completed={todo.completed}/>
+      <TodoItem
+      onComplete={()=>todoDone(todo.text)}
+      key={todo.text}
+      text={todo.text}  
+      completed={todo.completed}/>
       ))}
     </TodoList> 
     <CreateTodoButton/>
