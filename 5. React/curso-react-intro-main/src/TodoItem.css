@@ -43,3 +43,10 @@
 .Icon-delete:hover {
     color: red;
 }
+.Icon-check:hover {
+    color: #4caf50;
+}
+
+svg{
+    color: rgb(212, 206, 206);
+}
