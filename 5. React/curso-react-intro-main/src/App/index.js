@@ -39,15 +39,15 @@ function App() {
   
   console.log('1');
 
-  React.useEffect(() => {
-    console.log("Prueba de encapsulado 1");
+  React.useEffect(() => { //Se ejecuta cada vez que un estado se modifique cualquier estado
+    console.log("Prueba de encapsulado 1"); 
   });
 
-  React.useEffect(() => {
+  React.useEffect(() => { //Se ejecuta una sola vez despues de que el dom se cargue
     console.log("Prueba de encapsulado 2");
   }, []);
 
-  React.useEffect(() => {
+  React.useEffect(() => { //Se ejecuta cada vez que se modifique el estado todosTotal
     console.log("Prueba de encapsulado 3");
   }, [todosTotal]);
 
