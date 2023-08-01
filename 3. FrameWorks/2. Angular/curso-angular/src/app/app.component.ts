@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { every } from 'rxjs';
+import { products } from './productList';
 
 @Component({
   selector: 'app-root',
