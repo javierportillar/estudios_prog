@@ -16,10 +16,18 @@
 <!-- (keyup)="keyUpEvent($event)" -->
 <input type="number" required #estadoEdad="ngModel" [placeholder]="age" [(ngModel)]="person.edad" max="78" min="13">
 <p>{{person.nombre}}</p>
+<br>
 
 
-<div >
-    <ul *ngFor="let icon of emojis; index as i">{{i}}. {{icon}}</ul>
+<input type="text" placeholder="Emoji a insertar" [(ngModel)]="newEmoji">
+<button (click)="addEmoji()">Agregar emoji</button>
+
+
+<div>
+    <ul *ngIf="emojis.length==0">No hay lista cabron de mierda</ul>
+    <ul *ngFor="let icon of emojis; index as i">{{i+1}}.{{icon}}
+        <button (click)="delEmoji(i)">Eliminar emoji</button>
+    </ul>
 </div>
 
 <div *ngIf="person.nombre===''">
