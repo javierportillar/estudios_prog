@@ -1,0 +1,57 @@
+<h1>Eventos</h1>
+<button (click)="(buttonClick())">Dame click</button> <button (click)="edad_mas()">edad++</button>
+<button [disabled]="btnDisab">Enviar</button>
+<h3>Hola, soy {{name}} y tengo {{person.edad}}</h3>
+<progress [max]="100" [value]="age"></progress>
+
+<!-- <div class="box" (scroll)="scrollEvent($event)">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis error doloribus culpa consequatur dolor natus
+        ratione provident, eos modi ab deserunt quam nam rerum? Consequatur provident odio dolorum molestiae culpa.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore dolor temporibus quisquam, molestiae eveniet
+        ut sunt accusamus neque incidunt. Maiores suscipit voluptatem eveniet vel porro ut pariatur earum at veritatis.
+    </p>
+    
+</div> -->
+<input type="text" required #estado="ngModel" [placeholder]="name" [(ngModel)]="person.nombre">
+<!-- (keyup)="keyUpEvent($event)" -->
+<input type="number" required #estadoEdad="ngModel" [placeholder]="age" [(ngModel)]="person.edad" max="78" min="13">
+<p>{{person.nombre}}</p>
+
+
+<div >
+    <ul *ngFor="let icon of emojis; index as i">{{i}}. {{icon}}</ul>
+</div>
+
+<div *ngIf="person.nombre===''">
+    <p>Escriba algo hpta</p>
+</div>
+
+<div *ngIf="person.nombre==='Javier' else elseIfJaviMayor">
+    <p>Papi usted es muy crack, porque eres {{person.nombre}}</p>
+    <p *ngIf="person.edad>18 else elseIfJaviMayor">y porque tienes {{person.edad}}</p>
+</div>
+
+<ng-template #elseIfJaviMayor>
+    <p *ngIf="person.edad>=18 else elsePersonaMenor">
+        Usted {{person.nombre}} eres medio crack por
+        tener +18 años
+    </p>
+</ng-template>
+
+<ng-template #elsePersonaMenor>
+    <p>Usted {{person.nombre}} es nada crack porque tienes -18 </p>
+</ng-template>
+
+<!-- 
+
+< [disabled]="btnDisab">Enviar</ button>
+<input type="text" [placeholder]="person.nombre">
+<img [src]="person.avatar" [width]="age*3">
+<img src="{{img}}" [width]="age*3"  alt="">
+
+<br>
+<br>
+
+<h2>{{'Hola'.repeat(5)}}</h2>
+<h3>Hola, soy {{name}} y tengo {{age}}</h3>
+<p> 3+3 = {{3+3}}</p> -->
