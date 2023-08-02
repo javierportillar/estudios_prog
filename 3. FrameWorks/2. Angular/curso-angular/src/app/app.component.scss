@@ -1,3 +1,78 @@
+//Formulario
+.cuerpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura del contenedor principal según tus necesidades */
+  
+    .encuadro-info {
+      width: 60%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+  
+      form {
+        align-items: center;
+        p {
+          margin-bottom: 5px;
+        }
+  
+        input {
+          width: 80%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          transition: border-color 0.2s ease-in-out;
+  
+          &:focus {
+            outline: none;
+            border-color: dodgerblue;
+          }
+        }
+      }
+  
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: dodgerblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+  
+        &:hover {
+          background-color: #0066cc;
+        }
+      }
+    }
+  }
+  
+  .invalid{
+    color: red;
+}
+
+/* Anterior estilización
+.line-error{
+    height: 0;
+    border-bottom: 1px solid;
+    &.valid{
+        border-color: blue;
+    }
+    &.invalid{
+        border-color: green;
+    }
+}
+
+
 // Estilos para el contenedor principal
 .bodyWeb{
     display: flex;
@@ -33,8 +108,18 @@
     margin-bottom: 10px;
   }
   
+  .inputError{
+    color: antiquewhite;
+    background-color: black;
+    width: 30%;
+    transition: all linear 1s;
+  }
   // Efecto de aumento en hover
   .product-container:hover {
     transform: scale(1.05);
   }
-  
+  div{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  */

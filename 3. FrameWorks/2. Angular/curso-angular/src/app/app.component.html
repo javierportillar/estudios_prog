@@ -1,11 +1,69 @@
-PRODUCTOS
-    <div class="bodyWeb">
-    <div *ngFor="let product of products" class="product-container">
-        <img [src]="product.image" alt="image" srcset="">
-        <h2>{{product.name}}</h2>
-        <h3>Precio: ${{product.price}}</h3>
+<div class="header">
+</div>
+<div class="cuerpo">
+    <div class="encuadro-info">
+        <h1>Ingresa información de usuario</h1>
+        <form action="">
+            <p [class.invalid]="reqNombre.invalid">
+            Nombre</p>
+            <input type="text" required #reqNombre="ngModel" [(ngModel)]="person.nombre">
+            <p>Email</p>
+            <input type="email" required #reqEmail='ngModel' [(ngModel)]="person.correo" [placeholder]="person.correo">
+            <p>Contraseña</p>
+            <input type="password" required #reqContra='ngModel' [(ngModel)]="person.contra"
+                placeholder="Escriba contraseña">
+        </form>
+        <button>Entrar</button>
     </div>
 </div>
+
+<!-- NgClass y ngStyle
+    <h1>Clases y estilos dinámicos</h1>
+<input type="text" required #nameinput="ngModel" [(ngModel)]="person.nombre">
+<hr class="line-error"
+[ngClass]="{
+    'valid':nameinput.valid,
+    'invalid': nameinput.invalid
+}"
+>
+<div class="ngsStylee">
+<div>
+    <input type="number" [(ngModel)]="box.width">
+    <input type="number" [(ngModel)]="box.height">
+    <input type="color" [(ngModel)]="box.background"/>
+</div>
+<div [ngStyle]="{
+    'width.px':box.width,
+    'height.px':box.height,
+    'background-color':box.background,
+    'display':'block'
+}"></div>
+</div> -->
+
+<!-- 
+<div>
+    <p *ngIf="nameinput.invalid" [class.inputError]="nameinput.invalid">Este campo es requerido</p>
+</div>
+
+<label>Nombre</label>
+<input type="text" required #nameinput1="ngModel" [(ngModel)]="person.nombre">
+<p [style.font-style]="nameinput1.invalid?'italic':'normal'">Este campo es requerido</p> -->
+
+<!-- Render de varios productos
+    <div class="bodyWeb">
+        <div *ngFor="let product of products" class="product-container">
+            <img [src]="product.image" alt="image" srcset="">
+            <h2>{{product.name}}</h2>
+            <h3>Precio: ${{product.price}}</h3>
+        </div>
+
+        <div APARTE
+        
+        *ngFor="let product of products" class="product-container">
+        <input type="number" [(ngModel)]="withImg">
+        <img [style.width.px]="withImg" [src]="product.image">
+        </div>
+    </div> -->
 
 <!-- NGSWITCH 
     <h1>ngSwitch</h1>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { every } from 'rxjs';
 import { products } from "./productList";
 import { person } from "./productList";
+import { box } from "./productList";
 
 
 
@@ -10,7 +11,10 @@ import { person } from "./productList";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
 export class AppComponent {
+  withImg=10;
   name = 'Javi';
   age = 23;
   img = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2023-06/OLIVEIRA_CHARLES_L_06-10.png?itok=vKMJlOYL';
@@ -23,6 +27,7 @@ export class AppComponent {
   
   products= products;
   person=person;
+  box=box;
 
   buttonClick() {
     this.btnDisab = !this.btnDisab;
