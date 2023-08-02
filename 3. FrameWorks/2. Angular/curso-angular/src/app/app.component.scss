@@ -1,14 +1,40 @@
-.box{
-    height: 200px;
-    width: 200px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: orchid;
-    background-color: black;
-    overflow-y: auto;
-
-}
-
-.iconos{
+// Estilos para el contenedor principal
+.bodyWeb{
     display: flex;
-    padding: 10%;
-}
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  // Estilos para el contenedor de productos
+  .product-container {
+    flex: 1 0 21%; // Flex-grow: 1, Flex-shrink: 0, Flex-basis: 21%
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  
+    // Estilos para los títulos y el precio
+    h2, h3 {
+      margin: 0;
+    }
+  }
+  
+  // Estilos para la imagen
+  .product-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  // Efecto de aumento en hover
+  .product-container:hover {
+    transform: scale(1.05);
+  }
+  
