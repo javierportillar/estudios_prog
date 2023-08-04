@@ -14,6 +14,16 @@ import { box } from "./productList";
 
 
 export class AppComponent {
+  imagHijo=''
+
+  loaded(imag:string){
+    console.log('log padre',imag);
+    
+  }
+  
+ /* FUNDAMENTOS 
+ 
+
   withImg=10;
   name = 'Javi';
   age = 23;
@@ -28,6 +38,12 @@ export class AppComponent {
   products= products;
   person=person;
   box=box;
+
+  onRegister(){
+    console.log(this.person);
+    
+  }
+
 
   buttonClick() {
     this.btnDisab = !this.btnDisab;
@@ -54,4 +70,5 @@ export class AppComponent {
   delEmoji(i:number) {
     this.emojis.splice(i,1)
   }
+  */
 }

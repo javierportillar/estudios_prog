@@ -1,21 +1,31 @@
-<div class="header">
-</div>
-<div class="cuerpo">
-    <div class="encuadro-info">
-        <h1>Ingresa información de usuario</h1>
-        <form action="">
-            <p [class.invalid]="reqNombre.invalid">
-            Nombre</p>
-            <input type="text" required #reqNombre="ngModel" [(ngModel)]="person.nombre">
-            <p>Email</p>
-            <input type="email" required #reqEmail='ngModel' [(ngModel)]="person.correo" [placeholder]="person.correo">
-            <p>Contraseña</p>
-            <input type="password" required #reqContra='ngModel' [(ngModel)]="person.contra"
-                placeholder="Escriba contraseña">
-        </form>
-        <button>Entrar</button>
-    </div>
-</div>
+<p><input type="text" [(ngModel)]="imagHijo"></p>
+<app-img (loaded)="loaded($event)" [imag]="imagHijo"></app-img>
+
+
+<!-- Formulario JAVI
+    
+    <h1>Ingresa información de usuario</h1>
+<div class="contenedorP">
+    <form (ngSubmit)="onRegister()" #ngForm="ngForm">
+        <div class="input-group">
+            <label>Nombre</label>
+            <input type="text" name="name" required id="nombre" [(ngModel)]="person.nombre">
+            <p *ngIf="person.nombre==''">Campo requerido</p>
+        </div>
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" required id="correo" [(ngModel)]="person.correo" [placeholder]="person.correo">
+            <p *ngIf="person.correo==''">Campo requerido</p>
+        </div>
+        <div class="input-group">
+            <label>Contraseña</label>
+            <input type="password" name="password" required id="contra" [(ngModel)]="person.contra"
+            placeholder="Escriba contraseña">
+            <p *ngIf="person.contra==''">Campo requerido</p>
+        </div>
+        <button type="submit" [disabled]="ngForm.invalid">Registrar</button>
+    </form>
+</div> -->
 
 <!-- NgClass y ngStyle
     <h1>Clases y estilos dinámicos</h1>
@@ -42,7 +52,7 @@
 
 <!-- 
 <div>
-    <p *ngIf="nameinput.invalid" [class.inputError]="nameinput.invalid">Este campo es requerido</p>
+    <label *ngIf="nameinput.invalid" [class.inputError]="nameinput.invalid">Este campo es requerido</label>
 </div>
 
 <label>Nombre</label>

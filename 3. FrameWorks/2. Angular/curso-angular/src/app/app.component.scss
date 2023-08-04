@@ -1,65 +1,83 @@
+/* Formulario Javi
 //Formulario
-.cuerpo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ajusta la altura del contenedor principal según tus necesidades */
+$primary-color: #3498db;
+$border-color: #ccc;
+
+h1 {
+    top: 10%;
+    text-align: center;
+    background-color: #3498db;
+    font-style: italic;
+    border-radius: 5px;
+}
+.contenedorP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-style: Georgia, 'Times New Roman', Times, serif;
+  top: 0px;
+  form {
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    background-color: bisque;
+    top: 0px;
   
-    .encuadro-info {
-      width: 60%;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-      h1 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-      }
-  
-      form {
-        align-items: center;
-        p {
-          margin-bottom: 5px;
-        }
-  
-        input {
-          width: 80%;
-          padding: 10px;
-          margin-bottom: 15px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          transition: border-color 0.2s ease-in-out;
-  
-          &:focus {
-            outline: none;
-            border-color: dodgerblue;
-          }
-        }
-      }
-  
-      button {
+    h1 {
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+
+      label {
         display: block;
-        width: 100%;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 80%;
         padding: 10px;
-        background-color: dodgerblue;
-        color: white;
-        border: none;
+        border: 1px solid $border-color;
         border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.2s ease-in-out;
-  
-        &:hover {
-          background-color: #0066cc;
-        }
+      }
+
+      p {
+        margin: 5px 0;
+        color: red;
+        font-size: 12px;
+      }
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      background-color: $primary-color;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
       }
     }
   }
-  
-  .invalid{
-    color: red;
 }
-
+*/
 /* Anterior estilización
 .line-error{
     height: 0;
