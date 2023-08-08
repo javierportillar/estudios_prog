@@ -1,4 +1,4 @@
-<img [src]="imag" width="200px" *ngIf="imag; else imgDefault" (error)="eventError()" (load)="eventLoad()" >
+<img [src]="imag" (error)="eventError()" (load)="eventLoad()" >
 <ng-template #imgDefault>
     <p>Vacio</p>
 </ng-template>

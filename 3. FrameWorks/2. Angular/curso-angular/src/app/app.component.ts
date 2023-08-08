@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { every } from 'rxjs';
-import { products } from "./productList";
-import { person } from "./productList";
-import { box } from "./productList";
+import { products, person } from "./productList";
 
 
 
@@ -12,13 +10,56 @@ import { box } from "./productList";
   styleUrls: ['./app.component.scss']
 })
 
+export class AppComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy{
 
-export class AppComponent {
   imagHijo=''
+  cont=0;
+  contFuct:number|undefined;
+  showImg=true;
+
+ 
+  // products=products;
+  products = products;
+
+  ngOnDestroy() {
+    //delete render
+    console.log('ngOnDestroy');
+    window.clearInterval(this.contFuct);
+  
+  }
+  constructor(){
+    //before render
+    //NO async -- once time 
+    console.log('constructor','imgValue=>', this.showImg );
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+     //before - during render
+    //changes inputs -- times
+    console.log('ngOnChanges','imgValue=>', this.imagHijo );
+  }
+  ngOnInit() {
+    //before render
+    //asyn - fetch -- once time
+    console.log('ngOnInit');
+      this.contFuct= window.setInterval(()=>{
+      this.cont+=1;
+      console.log('Cont corrido');
+    },500)
+  }
+  ngAfterViewInit() {
+    //after render
+    //handle children (componentes hijos que reciben parametros)
+    console.log('ngAfterViewInit');
+  }
+ 
+
+  onDelete(){
+    this.showImg=!this.showImg
+   window.clearInterval(this.contFuct);
+  }
 
   loaded(imag:string){
     console.log('log padre',imag);
-    
   }
   
  /* FUNDAMENTOS 
