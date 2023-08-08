@@ -41,10 +41,10 @@ export class AppComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy
     //before render
     //asyn - fetch -- once time
     console.log('ngOnInit');
-      this.contFuct= window.setInterval(()=>{
-      this.cont+=1;
-      console.log('Cont corrido');
-    },500)
+    //   this.contFuct= window.setInterval(()=>{
+    //   this.cont+=1;
+    //   console.log('Cont corrido');
+    // },500)
   }
   ngAfterViewInit() {
     //after render
@@ -52,15 +52,6 @@ export class AppComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy
     console.log('ngAfterViewInit');
   }
  
-
-  onDelete(){
-    this.showImg=!this.showImg
-   window.clearInterval(this.contFuct);
-  }
-
-  loaded(imag:string){
-    console.log('log padre',imag);
-  }
   
  /* FUNDAMENTOS 
  
