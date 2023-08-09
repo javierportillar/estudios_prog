@@ -7,13 +7,18 @@ import { Product } from "../../models/product.model";
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
-  @Input() product!: Product
+  @Input() product: Product={
+    id: '',
+    price: 0,
+    image: '',
+    category: '',
+    description: ''
+  }
   @Output() adirirPrducto= new EventEmitter<Product>();
 
   addCarEvent() {
     this.adirirPrducto.emit(this.product)
   }
-
   
 }
 

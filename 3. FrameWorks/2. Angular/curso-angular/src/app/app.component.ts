@@ -10,7 +10,7 @@ import { products, person } from "./productList";
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy{
+export class AppComponent {
 
   imagHijo=''
   cont=0;
@@ -19,9 +19,13 @@ export class AppComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy
 
  
   // products=products;
-  products = products;
+ 
 
-  ngOnDestroy() {
+ 
+  
+ /* FUNDAMENTOS 
+ 
+   ngOnDestroy() {
     //delete render
     console.log('ngOnDestroy');
     window.clearInterval(this.contFuct);
@@ -51,10 +55,8 @@ export class AppComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy
     //handle children (componentes hijos que reciben parametros)
     console.log('ngAfterViewInit');
   }
- 
-  
- /* FUNDAMENTOS 
- 
+
+
 
   withImg=10;
   name = 'Javi';

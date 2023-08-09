@@ -13,7 +13,7 @@ export class ImgComponent {
   this.imag=this.imgDefault;
  }
  eventLoad(){
-  console.log('Log Hijo');
+  console.log('Log componente img');
   this.loaded.emit(this.imag);
  }
 }

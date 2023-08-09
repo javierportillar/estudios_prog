@@ -1,6 +1,11 @@
 import { Product } from "./product.model";
+import { ProductsApiService } from "./services/products-api.service";
 
 export const products:Product[] = [
+
+]
+    /* PRODUCTOS MANUALES
+    
     {
         name: 'El mejor juguete',
         price: 565,
@@ -33,8 +38,9 @@ export const products:Product[] = [
         price: 3434,
         image: '../assets/images/glasses.jpg'
     }
-]
+    */
 
+    
 export const person = {
     nombre: 'Javier Portilla',
     edad: 23,

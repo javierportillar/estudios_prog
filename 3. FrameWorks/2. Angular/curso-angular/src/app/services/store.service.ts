@@ -7,8 +7,6 @@ import { Product } from "../models/product.model";
 export class StoreService {
   total:number=0;
   private productCar:Product[]=[
-    {image:'',
-    price:0}
   ]
 
   addedProduct(product:Product){
