@@ -19,6 +19,5 @@ export class ProductComponent {
   addCarEvent() {
     this.adirirPrducto.emit(this.product)
   }
-  
 }
 

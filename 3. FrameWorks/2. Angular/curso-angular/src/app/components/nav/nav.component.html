@@ -6,9 +6,12 @@
         <a class="logo" href="">
             <img src="../../../assets/svg/logo2.png" alt="logo">
         </a>
-        <a href="">
-            <img src="../../../assets/svg/icon_shopping_cart.svg" alt="logo">
-        </a>
+        <div>
+            <a href="">
+                <img src="../../../assets/svg/icon_shopping_cart.svg" alt="logo">
+            </a>
+            <span class="counter">{{cont}}</span>
+        </div>
     </div>
     <div class="side-menu" [class.active]="menuState">
         <button (click)="toggleMenu()">Close</button>
@@ -34,10 +37,11 @@
         </nav>
         <div class="info">
             <div class="account">nicolas@nicolas.com</div>
-            <div>
+            <div class="cart">
                 <a href="">
                     <img src="../../../assets/svg/icon_shopping_cart.svg" alt="logo">
                 </a>
+                <span class="counter">1</span>
             </div>
         </div>
     </div>
