@@ -1,6 +1,6 @@
 <div class="product-indi">
     <p>{{product.title }}</p>    
-    <app-img [imag]="product.image"></app-img>
+    <app-img [imag]="product.images[0]"></app-img>
     <h2>Precio = {{product.price | currency :'COP'}}</h2>
     <!-- <p appHighlight>{{product.description}}</p> -->
     <button (click)="addCarEvent()">Add to car</button>

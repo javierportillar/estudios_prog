@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Product } from "../models/product.model";
+import { Product, CreateProductDTO, UpdateProductDTO } from "../models/product.model";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ProductsApiService {
     private http:HttpClient
   ) { }
 
-  apiURL='https://fakestoreapi.com/products'
+  apiURL='https://young-sands-07814.herokuapp.com/api/products'
   getAllProducts(){
   let a= this.http.get<Product[]>(this.apiURL)
   return a;
@@ -20,4 +20,17 @@ export class ProductsApiService {
     let b= this.http.get<Product>(`${this.apiURL}/${id}`)
     return b;
     }
+    create(dto: CreateProductDTO){
+      let c = this.http.post<Product>(this.apiURL,dto);
+      return c;
+    }
+    update(id:string,dto:UpdateProductDTO){
+      let d = this.http.put<Product>(`${this.apiURL}/${id}`,dto);
+      return d;
+    }
+    delete(id:string){
+      let b= this.http.delete<boolean>(`${this.apiURL}/${id}`)
+      return b;
+      }
+    
 }

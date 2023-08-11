@@ -1,4 +1,5 @@
 <p> Tienes {{productCar.length}} items agregados y en total sumaria {{total}}</p>
+<button (click)="addNewProduct()">Crear nuevo Producto</button>
 <div class="products--grid">
     <div *ngFor="let product of products">
         <app-product 
@@ -13,11 +14,12 @@
         <button (click)="togglePD()">Cerrar</button>
         <h1>{{productChosen.title}}</h1>
         <swiper-container class="card">
-            <swiper-slide >
-                <img [src]="productChosen.image" alt="">
+            <swiper-slide *ngFor="let img of productChosen.images">
+                <img [src]="img" alt="">
             </swiper-slide>
         </swiper-container>
         <h1>{{productChosen.description}}</h1>
-
+        <button (click)="editarProducto()">Editar</button>
+        <button (click)="deleteProduct()">Eliminar</button>
     </div>
 </div>
