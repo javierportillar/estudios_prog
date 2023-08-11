@@ -14,10 +14,15 @@ export class ProductComponent {
     category: '',
     description: ''
   }
-  @Output() adirirPrducto= new EventEmitter<Product>();
-
+  @Output() adirirProducto= new EventEmitter<Product>();
+  @Output() mostrarProducto= new EventEmitter<string>();
+  
   addCarEvent() {
-    this.adirirPrducto.emit(this.product)
+    this.adirirProducto.emit(this.product)
+  }
+
+  showPD(){
+    this.mostrarProducto.emit(this.product.id)
   }
 }
 

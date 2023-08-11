@@ -10,10 +10,6 @@ import { ProductsApiService } from "../../services/products-api.service";
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent{
-  total:number=0;
-  products:Product[]=[];
-  productCar: Product[]=[]
- 
   constructor(
     private storeService: StoreService,
     private productsApiService: ProductsApiService
@@ -21,6 +17,27 @@ export class ProductsComponent{
   ){
     this.productCar = this.storeService.getShoppingCart();
   }
+  productDeState=false;
+  total:number=0;
+  products:Product[]=[];
+  productCar: Product[]=[]
+
+
+  productIndicated(id:string){
+    console.log('id');
+    this.productsApiService.getProductID(id)
+    .subscribe(data=>{
+      console.log('Producto',data);
+  
+    })
+  }
+ 
+  togglePD(){
+    this.productDeState=!this.productDeState;
+    console.log('Prueba clicl PD',this.productDeState);
+    
+  }
+ 
   productAdded(product:Product){
     console.log(product);
     this.storeService.addedProduct(product);
