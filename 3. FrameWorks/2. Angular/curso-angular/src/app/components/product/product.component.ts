@@ -12,7 +12,8 @@ export class ProductComponent {
     price: 0,
     image: '',
     category: '',
-    description: ''
+    description: '',
+    title:'',
   }
   @Output() adirirProducto= new EventEmitter<Product>();
   @Output() mostrarProducto= new EventEmitter<string>();

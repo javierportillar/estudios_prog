@@ -21,14 +21,24 @@ export class ProductsComponent{
   total:number=0;
   products:Product[]=[];
   productCar: Product[]=[]
+  productChosen: Product={
+    id: '',
+    price: 0,
+    image: '',
+    category: '',
+    description: '',
+    title:'',
+  }
 
 
   productIndicated(id:string){
     console.log('id');
     this.productsApiService.getProductID(id)
     .subscribe(data=>{
-      console.log('Producto',data);
-  
+      console.log(this.productChosen);
+      
+      this.togglePD();
+      this.productChosen=data;
     })
   }
  

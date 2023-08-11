@@ -8,3 +8,16 @@
         ></app-product>
     </div>
 </div>
+<div class="product-detail" [class.active]="productDeState">
+    <div>
+        <button (click)="togglePD()">Cerrar</button>
+        <h1>{{productChosen.title}}</h1>
+        <swiper-container class="card">
+            <swiper-slide >
+                <img [src]="productChosen.image" alt="">
+            </swiper-slide>
+
+        </swiper-container>
+
+    </div>
+</div>
