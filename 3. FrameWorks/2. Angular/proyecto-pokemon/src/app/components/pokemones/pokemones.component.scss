@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  background-color: yellow;
+  background-color: #f5db13;
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -18,7 +18,7 @@
   transition: transform 0.2s ease-in-out;
   justify-content: center;
   text-align: center;
-  color: yellow;
+  color: black;
 
 
   &:hover {
@@ -31,8 +31,11 @@
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
     gap: 10px; /* Espacio entre elementos */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ddd;
   }
-  
+
 .pokemon-container {
   text-align: center;
 }
