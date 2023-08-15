@@ -13,7 +13,7 @@ export class ReqAPIService {
   getPokeApi(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
 }
-  getPokemonDetail(url: string): Observable<any> {
+  getPokeDetail(url: string): Observable<any> {
     return this.http.get<any>(url);
   }
 }
