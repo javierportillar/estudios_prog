@@ -5,7 +5,7 @@ import { Observable, map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PokeDataService  {
+export class PokeDataService {
   constructor(
     private apiReq: ReqAPIService,
   ) { }
@@ -16,20 +16,21 @@ export class PokeDataService  {
       map(data => {
         let pokemonsDetails: any[] = [];
         for (let pokemon of data.results) {
-          this.apiReq.getPokeDetail(pokemon.url).subscribe(detallePokemon => {
-          pokemonsDetails.push({
-            name: pokemon.name,
-            details: detallePokemon,
-            image: detallePokemon.sprites.other.dream_world.front_default,
-            id: detallePokemon.id,
-          });
-        });
-      }
-      return pokemonsDetails;
-    })
-  );
-  
-}
+          this.apiReq.getPokeDetail(pokemon.url)
+            .subscribe(detallePokemon => {
+              pokemonsDetails.push({
+                name: detallePokemon.name,
+                details: detallePokemon,
+                image: detallePokemon.sprites.other.dream_world.front_default,
+                id: detallePokemon.id,
+              });
+            });
+        }
+        return pokemonsDetails;
+      })
+    );
+
+  }
 }
 /* 
 import { Injectable } from '@angular/core';

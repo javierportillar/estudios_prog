@@ -26,6 +26,13 @@
   }
 }
 
+.id-general {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    gap: 10px; /* Espacio entre elementos */
+  }
+  
 .pokemon-container {
   text-align: center;
 }
