@@ -6,27 +6,25 @@ import { ReqAPIService } from "./services/req-api.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   constructor(
-    private apiReq:ReqAPIService,
-  ){}
-  
+    private apiReq: ReqAPIService,
+  ) { }
+  pokemons: any[] = [];  // <-- Array para almacenar los datos de los Pokémon
 
   getPokemones() {
     this.apiReq.getPokeApi().subscribe(data => {
-      // Itera sobre todos los resultados.
       for (let pokemon of data.results) {
-        // Para cada Pokémon, obtiene los detalles.
         this.apiReq.getPokemonDetail(pokemon.url).subscribe(detallePokemon => {
-          console.log('Nombre:', pokemon.name);
-          console.log('Detalles del Pokemon:', detallePokemon);
-          let img = detallePokemon.sprites.front_default;
-          console.log(img);
-          
+          let pokemonData = {
+            name: pokemon.name,
+            details: detallePokemon,
+            image: detallePokemon.sprites.front_default
+          };
+          this.pokemons.push(pokemonData);
         });
       }
     });
-    
   }
   ngOnInit(): void {
     this.getPokemones();
