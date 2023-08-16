@@ -13,19 +13,20 @@ export class PokemonesComponent{
     private pokemData:PokeDataService,
   ){}
 
-  getPokemones(){
+  getAllPokemones(){
     this.pokemData.getPokemones().subscribe(data => {
       this.pokemons = data;
-    });    
-  }
-  pokeDetail(pokemon: any) {
-    this.pokemData.getPokemon(pokemon.id).subscribe(detail => {
-        this.pokemon = detail;
-        console.log(this.pokemon);
     });
-}
-  ngOnInit(): void {
-    this.getPokemones();
+    
   }
-
+  ngOnInit(): void {
+    this.getAllPokemones();
+  }
+  pokeDetail(pokemon: any) {}
+  
 }
+//   this.pokemData.getPokemon(pokemon.id).subscribe(detail => {
+//       this.pokemon = detail;
+//       console.log(this.pokemon);
+//   });
+// }

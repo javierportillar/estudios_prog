@@ -13,26 +13,26 @@ export class PokeDataService {
 
   pokemons: any[] = []; // <-- Array para almacenar los datos de los Pokémon
 
+  
   getPokemones(): Observable<any[]> {
     return this.apiReq.getPokeApi().pipe(
-      mergeMap(data => {
-        let requests = [];
+      map(data => {
+        let pokemonsDetails: any[] = [];
         for (let pokemon of data.results) {
-          requests.push(this.apiReq.getPokeDetail(pokemon.url).pipe(
-            map(detail => ({
+          this.apiReq.getPokeDetail(pokemon.url).subscribe(detallePokemon => {
+            pokemonsDetails.push({
               name: pokemon.name,
-              details: detail,
-              image: detail.sprites.other.dream_world.front_default,
-              id: detail.id,
-            }))
-          ));
+              details: detallePokemon,
+              image: detallePokemon.sprites.other.dream_world.front_default
+            });
+          });
         }
-        return forkJoin(requests);
+        return pokemonsDetails;
       })
     );
   }
+}
 
-  getPokemon(id: number): Observable<any> {
-    return this.apiReq.getPokeDetails(id);
-}
-}
+// getPokemon(id: number): Observable<any> {
+//   return this.apiReq.getPokeDetails(id);
+// }
