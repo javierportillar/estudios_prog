@@ -31,6 +31,10 @@ export class PokeDataService {
       })
     );
   }
+  getPokemon(id: number): Observable<any> {
+    return this.apiReq.getPokeDetails(id);
+  }
+  
 }
 
 // getPokemon(id: number): Observable<any> {

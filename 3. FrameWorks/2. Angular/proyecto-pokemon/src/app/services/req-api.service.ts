@@ -19,6 +19,10 @@ export class ReqAPIService {
   getPokeDetail(url: string): Observable<any> {
     return this.http.get<any>(url);
   }
+  getPokeDetails(id: number): Observable<any> {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    return this.http.get<any>(url);
+  }
 }
 // getPokeDetails(id: number): Observable<number> {
 //   const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
