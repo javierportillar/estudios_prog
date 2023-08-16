@@ -21,7 +21,9 @@ export class ReqAPIService {
   }
   getPokeDetails(id: number): Observable<any> {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    // console.log(this.http.get<any>(url));
     return this.http.get<any>(url);
+    
   }
 }
 // getPokeDetails(id: number): Observable<number> {

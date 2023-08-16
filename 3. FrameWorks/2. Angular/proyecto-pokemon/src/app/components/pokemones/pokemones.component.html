@@ -1,11 +1,21 @@
 <div class="pokemon-list">
-    <div *ngFor="let pokemon of pokemons" class="pokemon-item">
-        <img [src]="pokemon.image" alt="{{ pokemon.name }}" class="pokemon-image">
+    <div *ngFor="let pokemonimp of pokemons" class="pokemon-item">
+        <img [src]="pokemonimp.image" alt="{{ pokemonimp.name }}" class="pokemon-image">
         <div class="id-general">
-            <p class="pokemon-id">{{ pokemon.id }}.</p>
-            <h2 class="pokemon-name">{{ pokemon.name }}</h2>
+            <p class="pokemon-id">{{ pokemonimp.id }}.</p>
+            <h2 class="pokemon-name">{{ pokemonimp.name }}</h2>
         </div>
-        <button (click)="pokeDetail(pokemon)">Ver Poke detalle</button>
+        <button (click)="pokeDetail(pokemonimp)">Ver Poke detalle</button>
         <!-- Aquí puedes agregar más detalles si lo deseas -->
+    </div>
+</div>
+<div class="pokemon-detail">
+    <div *ngIf="pokemonState">
+        <h1>Nombre: {{pokemon.name}}</h1>
+        <h2>Numero de movimientos: {{pokemon.moves?.length}}</h2>
+        <h2>Pesa: {{pokemon.weight}}lb</h2>
+        <h2>Estatura: {{pokemon.height}}cm </h2>
+        <h2 *ngFor="let tipos of pokemon.types">Tipo de pokemon: {{tipos.type.name}}</h2>
+        <img src="{{pokemon.sprites.other?.dream_world?.front_default}}" alt="">
     </div>
 </div>

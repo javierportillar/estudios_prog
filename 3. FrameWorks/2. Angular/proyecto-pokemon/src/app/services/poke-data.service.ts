@@ -22,6 +22,7 @@ export class PokeDataService {
           this.apiReq.getPokeDetail(pokemon.url).subscribe(detallePokemon => {
             pokemonsDetails.push({
               name: pokemon.name,
+              url:pokemon.url,
               details: detallePokemon,
               image: detallePokemon.sprites.other.dream_world.front_default
             });
@@ -32,7 +33,9 @@ export class PokeDataService {
     );
   }
   getPokemon(id: number): Observable<any> {
-    return this.apiReq.getPokeDetails(id);
+    let a= this.apiReq.getPokeDetails(id);
+    // console.log(a);
+    return a;
   }
   
 }

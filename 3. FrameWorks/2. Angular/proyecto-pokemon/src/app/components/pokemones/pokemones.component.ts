@@ -8,7 +8,8 @@ import { PokeDataService } from "../../services/poke-data.service";
 })
 export class PokemonesComponent {
   pokemons: any[] = [];
-  pokemon: any[] = [];
+  pokemon: any = {};
+  pokemonState=false;
   constructor(
     private pokemData: PokeDataService,
   ) { }
@@ -22,8 +23,13 @@ export class PokemonesComponent {
   ngOnInit(): void {
     this.getAllPokemones();
   }
+
   pokeDetail(pokemon: any) {
     const id = this.extractPokemonIdFromUrl(pokemon.url);
+    this.pokemonState=!this.pokemonState;
+    console.log(this.pokemonState);
+    console.log(id);
+    console.log(pokemon.url);
     if (id !== -1) {
       this.pokemData.getPokemon(id).subscribe(detail => {
         this.pokemon = detail;
@@ -33,8 +39,9 @@ export class PokemonesComponent {
   }
 
   extractPokemonIdFromUrl(url: string): number {
+
     if (!url || typeof url !== 'string') {
-      console.error('Invalid URL:', url);
+      console.log('Invalid URL:', url);
       return -1;
     }
 
