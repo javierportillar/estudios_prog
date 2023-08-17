@@ -24,7 +24,8 @@ export class PokeDataService {
               name: pokemon.name,
               url:pokemon.url,
               details: detallePokemon,
-              image: detallePokemon.sprites.other.dream_world.front_default
+              image: detallePokemon.sprites.other.dream_world.front_default,
+              id:detallePokemon.id,
             });
           });
         }

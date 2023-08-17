@@ -9,13 +9,15 @@
         <!-- Aquí puedes agregar más detalles si lo deseas -->
     </div>
 </div>
-<div class="pokemon-detail">
-    <div *ngIf="pokemonState">
-        <h1>Nombre: {{pokemon.name}}</h1>
-        <h2>Numero de movimientos: {{pokemon.moves?.length}}</h2>
-        <h2>Pesa: {{pokemon.weight}}lb</h2>
-        <h2>Estatura: {{pokemon.height}}cm </h2>
-        <h2 *ngFor="let tipos of pokemon.types">Tipo de pokemon: {{tipos.type.name}}</h2>
-        <img src="{{pokemon.sprites.other?.dream_world?.front_default}}" alt="">
+<div *ngIf="pokemonState" class="pokemon-detail" [class.pokedetail-active]="pokemonState">
+    <div class="detail-content">
+      <span class="close-button" (click)="togglePokeState()">X</span>
+      <h1>Nombre: {{pokemon?.name}}</h1>
+      <h2>Numero de movimientos: {{pokemon?.moves?.length}}</h2>
+      <h2>Pesa: {{pokemon?.weight}}Lb</h2>
+      <h2>Estatura: {{pokemon?.height}}cm </h2>
+      <h2 *ngFor="let tipos of pokemon?.types">Tipo de pokemon: {{tipos.type.name}}</h2>
+      <img *ngIf="pokemon" [src]="pokemon.sprites.other.dream_world.front_default" alt="">
     </div>
-</div>
+  </div>
+  

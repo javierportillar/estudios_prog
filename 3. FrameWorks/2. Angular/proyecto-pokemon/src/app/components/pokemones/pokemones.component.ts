@@ -23,13 +23,15 @@ export class PokemonesComponent {
   ngOnInit(): void {
     this.getAllPokemones();
   }
-
+  togglePokeState(){
+    this.pokemonState=!this.pokemonState;
+  }
   pokeDetail(pokemon: any) {
+    console.log(pokemon);
     const id = this.extractPokemonIdFromUrl(pokemon.url);
     this.pokemonState=!this.pokemonState;
-    console.log(this.pokemonState);
-    console.log(id);
-    console.log(pokemon.url);
+    // console.log(this.pokemonState);
+    // console.log(id);
     if (id !== -1) {
       this.pokemData.getPokemon(id).subscribe(detail => {
         this.pokemon = detail;
@@ -39,7 +41,6 @@ export class PokemonesComponent {
   }
 
   extractPokemonIdFromUrl(url: string): number {
-
     if (!url || typeof url !== 'string') {
       console.log('Invalid URL:', url);
       return -1;
@@ -52,7 +53,6 @@ export class PokemonesComponent {
       console.error('Unable to extract ID from URL:', url);
       return -1;
     }
-
     return +id;
   }
 

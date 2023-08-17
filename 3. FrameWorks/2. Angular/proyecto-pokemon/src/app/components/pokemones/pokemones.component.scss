@@ -20,21 +20,20 @@
   text-align: center;
   color: black;
 
-
   &:hover {
     transform: translateY(-5px);
   }
 }
 
 .id-general {
-    display: flex;
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    gap: 10px; /* Espacio entre elementos */
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #ddd;
-  }
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  gap: 10px; /* Espacio entre elementos */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ddd;
+}
 
 .pokemon-container {
   text-align: center;
@@ -49,9 +48,61 @@
 
 .pokemon-name {
   font-size: 1.2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin: 5px 0;
 }
 
 .pokemon-id {
-margin: 0;}
+  margin: 0;
+}
+
+.pokemon-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Inicialmente oculto */
+  visibility: hidden; /* Inicialmente oculto */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  max-height: 100;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  &.pokedetail-active {
+    opacity: 1; /* Mostrar */
+    visibility: visible; /* Mostrar */
+  }
+
+  .detail-content {
+    background-color: #f5db13;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* Estilos para otros detalles aquí */
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    img{
+        background-color: #0585f6;
+        border-radius: 10px;
+    }
+  }
+}
