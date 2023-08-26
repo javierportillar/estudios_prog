@@ -38,7 +38,13 @@ export class PokeDataService {
     // console.log(a);
     return a;
   }
+  agregarPokemonAFavoritos(pokemon: any): Observable<any> {
+    return this.apiReq.agregarAFavoritos(pokemon);
+  }
   
+  actualizarInfoPokemonFavorito(pokemon: any): Observable<any> {
+    return this.apiReq.actualizarPokemonFavorito(pokemon);
+  }
 }
 
 // getPokemon(id: number): Observable<any> {

@@ -3,21 +3,22 @@
         <img [src]="pokemonimp.image" alt="{{ pokemonimp.name }}" class="pokemon-image">
         <div class="id-general">
             <p class="pokemon-id">{{ pokemonimp.id }}.</p>
-            <h2 class="pokemon-name">{{ pokemonimp.name }}</h2>
+            <!-- <h2 class="pokemon-name">{{ pokemonimp.name }}</h2> -->
         </div>
         <button (click)="pokeDetail(pokemonimp)">Ver Poke detalle</button>
+        <button (click)="agregarAFavoritos(pokemon)">Agregar a Favoritos</button>
+        <button (click)="mostrarFormularioEdicion(pokemon)">Editar</button>
         <!-- Aquí puedes agregar más detalles si lo deseas -->
     </div>
 </div>
 <div *ngIf="pokemonState" class="pokemon-detail" [class.pokedetail-active]="pokemonState">
     <div class="detail-content">
-      <span class="close-button" (click)="togglePokeState()">X</span>
-      <h1>Nombre: {{pokemon?.name}}</h1>
-      <h2>Numero de movimientos: {{pokemon?.moves?.length}}</h2>
-      <h2>Pesa: {{pokemon?.weight}}Lb</h2>
-      <h2>Estatura: {{pokemon?.height}}cm </h2>
-      <h2 *ngFor="let tipos of pokemon?.types">Tipo de pokemon: {{tipos.type.name}}</h2>
-      <img *ngIf="pokemon" [src]="pokemon.sprites.other.dream_world.front_default" alt="">
+        <span class="close-button" (click)="togglePokeState()">X</span>
+        <h1>Nombre: {{pokemon?.name}}</h1>
+        <h2>Numero de movimientos: {{pokemon?.moves?.length}}</h2>
+        <h2>Pesa: {{pokemon?.weight}}Lb</h2>
+        <h2>Estatura: {{pokemon?.height}}cm </h2>
+        <h2 *ngFor="let tipos of pokemon?.types">Tipo de pokemon: {{tipos.type.name}}</h2>
+        <img *ngIf="pokemon" [src]="pokemon.sprites.other.dream_world.front_default" alt="">
     </div>
-  </div>
-  
+</div>

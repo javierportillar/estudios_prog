@@ -10,7 +10,7 @@ export class ReqAPIService {
     private http: HttpClient
   ) { }
 
-  apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0';
+  apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0';
 
   getPokeApi(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
@@ -23,8 +23,18 @@ export class ReqAPIService {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     // console.log(this.http.get<any>(url));
     return this.http.get<any>(url);
-    
   }
+  obtenerDetallesPokemon(url: string): Observable<any> {
+  return this.http.get(url);
+}
+agregarAFavoritos(pokemon: any): Observable<any> {
+  const url = 'http://localhost:3000/favoritos'; // Reemplaza 'TU_API_URL' con la URL de tu API
+  return this.http.post(url, pokemon);
+}
+actualizarPokemonFavorito(pokemon: any): Observable<any> {
+  const url = `http://localhost:3000/favoritos/${pokemon.id}`; // Reemplaza 'TU_API_URL' con la URL de tu API
+  return this.http.patch(url, pokemon);
+}
 }
 // getPokeDetails(id: number): Observable<number> {
 //   const url = `https://pokeapi.co/api/v2/pokemon/${id}`;

@@ -56,6 +56,26 @@ export class PokemonesComponent {
     return +id;
   }
 
+  // En PokemonesComponent
+
+agregarAFavoritos(pokemon: any) {
+  this.pokemData.agregarPokemonAFavoritos(pokemon).subscribe(response => {
+    console.log('Pokémon agregado a favoritos:', response);
+  });
+}
+
+mostrarFormularioEdicion(pokemon: any) {
+  // Aquí puedes mostrar un formulario para editar la información del Pokémon
+  // Una vez que el usuario haya realizado los cambios y enviado el formulario, llama al siguiente método:
+  this.actualizarInfoPokemon(pokemon);
+}
+
+actualizarInfoPokemon(pokemon: any) {
+  this.pokemData.actualizarInfoPokemonFavorito(pokemon).subscribe(response => {
+    console.log('Información del Pokémon actualizada:', response);
+  });
+}
+
 }
 //   this.pokemData.getPokemon(pokemon.id).subscribe(detail => {
 //       this.pokemon = detail;
