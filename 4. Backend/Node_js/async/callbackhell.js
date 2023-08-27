@@ -11,7 +11,6 @@ function despedida(nombre, otroCallback) {
     otroCallback();
   }, 1000);
 }
-
 function hablar(cbHablar) {
   setTimeout(() => {
     console.log("CallBack Hablar");
@@ -19,8 +18,8 @@ function hablar(cbHablar) {
   }, 1500);
 }
 function conversacion(nombre,nVeces,cback){
-    console.log('Conversacionn');
-    if(nVeces>0){
+    console.log(nVeces);
+    if(nVeces>0||nVeces==0){
         hablar(()=>{
             nVeces--;
             conversacion(nombre,nVeces,cback);
