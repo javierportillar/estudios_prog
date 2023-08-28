@@ -18,7 +18,6 @@ async function errorAsync(){
     }
 }
 
-
 try{errorAsync()
 } catch(errorrrrr){
     console.error('errorrrrr')
