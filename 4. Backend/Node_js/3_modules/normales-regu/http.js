@@ -1,12 +1,14 @@
 const http = require('http');
+http.createServer(enrutamiento).listen(4200);
 
-const enrutamiento=(require,response)=>{
+function enrutamiento(require,response){
     console.log('Nueva peticion');
     console.log(require.url);
     
     switch(require.url){
         case '/hola':
-            response.write('Ay no, miremos como captamos todo esto haha');
+            let saludo = hola();
+            response.write(saludo);
             response.end();
             break;
             case '/':
@@ -20,4 +22,6 @@ const enrutamiento=(require,response)=>{
 }
 console.log('Escuchando en el puerto 42000');
 
-http.createServer(enrutamiento).listen(4200);
+function hola(){
+    return 'Hola bb que más pues'
+}

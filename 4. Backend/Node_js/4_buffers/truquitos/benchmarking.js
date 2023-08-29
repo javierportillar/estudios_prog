@@ -13,10 +13,9 @@ for (let i = 0; i < 99999999; i++) {
 }
 console.timeEnd("ciclo_for2");
 
-
 console.time("Asyync");
 asincrox().then(() => {
-console.log('Terminado async');
+  console.log("Terminado async");
   console.timeEnd("Asyync");
 });
 
