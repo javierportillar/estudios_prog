@@ -11,6 +11,6 @@ process.on('uncaughtException',(error,origen)=>{
     console.error('Se nos olvido capturar algun error');
     console.error(error);
 }) //
-
-funcionnoExiste();
+process.on('')
+// funcionnoExiste();
 // process.on('unhandledRejection') //Para promesas rechazadas que no tienen catch 
