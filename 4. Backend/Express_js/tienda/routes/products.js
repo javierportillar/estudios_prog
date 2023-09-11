@@ -19,6 +19,32 @@ router.get('/', (peticion, respuesta) => {//get recibe dos parametros (ruta) y f
   respuesta.json(productos);
 });
 
+router.post('/',(req,res)=>{
+  const puta = req.body;
+  res.json({
+    mensaje:'creado',
+    datos:puta,
+  })
+})
+
+router.patch('/:id',(req,res)=>{
+  const {id}= req.params;
+  res.json({
+    mensaje:'actualizado',
+    data:puta,
+    id
+  })
+})
+router.delete('/:id',(req,res)=>{
+  const {id}= req.params;
+  const puta = req.body;
+  res.json({
+    mensaje:'eliminado',
+    id
+  })
+})
+
+
 router.get('/filter',(req,res)=>{
   res.send('Ruta products/filter')
 })
@@ -33,5 +59,6 @@ router.get('/:iden', (request, response) => {
     price: 3000,
   });
 });
+
 
 module.exports = router;

@@ -5,6 +5,7 @@ const routerApi = require('./routes/index')
 const app = express(); //Declaración de app como un método - función express
 const port = 3000;
 
+app.use(express.json());
 app.listen(port, () => {
   //Que escuche en ese puerto (puerto a utilizar) y que hacer después de ello dentro de {}
   console.log('Puerto:' + port);

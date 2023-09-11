@@ -13,7 +13,6 @@ export class PokeDataService {
 
   pokemons: any[] = []; // <-- Array para almacenar los datos de los Pokémon
 
-  
   getPokemones(): Observable<any[]> {
     return this.apiReq.getPokeApi().pipe(
       map(data => {
@@ -41,7 +40,7 @@ export class PokeDataService {
   agregarPokemonAFavoritos(pokemon: any): Observable<any> {
     return this.apiReq.agregarAFavoritos(pokemon);
   }
-  
+
   actualizarInfoPokemonFavorito(pokemon: any): Observable<any> {
     return this.apiReq.actualizarPokemonFavorito(pokemon);
   }
