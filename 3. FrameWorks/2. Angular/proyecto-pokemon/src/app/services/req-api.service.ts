@@ -29,7 +29,7 @@ export class ReqAPIService {
   return this.http.get(url);
 }
 agregarAFavoritos(pokemon: any): Observable<any> {
-  const url = 'http://localhost:8000/favoritos';
+  const url = 'http://localhost:8000/v1/favoritos';
   return this.http.post(url, pokemon);
 }
 actualizarPokemonFavorito(pokemon: any): Observable<any> {
