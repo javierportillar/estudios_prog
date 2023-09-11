@@ -1,6 +1,16 @@
 const pokeService = require("../services/pokemons.service");
-const favorites = [];
+const fav = require('./fav')
+const express= require('express')
 
+
+function routerApi(app){
+  const mainRouter = express.Router();
+  app.use('/v1',mainRouter);
+  mainRouter.use('/favoritos',fav);
+}
+module.exports = routerApi;
+
+/* Explicacion Cardenas
 const getPokemon = async (req, res) => {
   // const pokemonesAdded = pokeService.getAll();
   console.log({ req, res });
@@ -31,3 +41,5 @@ module.exports = {
   addPokemon,
   getFavorite,
 };
+
+*/

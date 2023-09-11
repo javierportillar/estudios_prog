@@ -19,6 +19,7 @@ export class ReqAPIService {
   getPokeDetail(url: string): Observable<any> {
     return this.http.get<any>(url);
   }
+
   getPokeDetails(id: number): Observable<any> {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     // console.log(this.http.get<any>(url));
@@ -28,7 +29,7 @@ export class ReqAPIService {
   return this.http.get(url);
 }
 agregarAFavoritos(pokemon: any): Observable<any> {
-  const url = 'http://localhost:3000/favoritos'; // Reemplaza 'TU_API_URL' con la URL de tu API
+  const url = 'http://localhost:8000/favoritos';
   return this.http.post(url, pokemon);
 }
 actualizarPokemonFavorito(pokemon: any): Observable<any> {
