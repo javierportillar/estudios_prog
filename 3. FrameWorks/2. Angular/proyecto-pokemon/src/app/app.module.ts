@@ -4,11 +4,13 @@ import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonesComponent } from './components/pokemones/pokemones.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonesComponent
+    PokemonesComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+<div class="pokemon-detail">
+  <div class="detail-content">
+      <h1>Nombre: {{pokemon?.name}}</h1>
+      <h2>Numero de movimientos: {{pokemon?.moves?.length}}</h2>
+      <h2>Pesa: {{pokemon?.weight}}Lb</h2>
+      <h2>Estatura: {{pokemon?.height}}cm </h2>
+      <h2 *ngFor="let tipos of pokemon?.types">Tipo de pokemon: {{tipos.type.name}}</h2>
+      <img *ngIf="pokemon" [src]="pokemon.sprites.other.dream_world.front_default" alt="">
+  </div>
+</div>

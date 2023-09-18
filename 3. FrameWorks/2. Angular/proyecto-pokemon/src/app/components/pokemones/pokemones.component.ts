@@ -9,6 +9,7 @@ import { PokeDataService } from "../../services/poke-data.service";
 export class PokemonesComponent {
   pokemons: any[] = [];
   pokemon: any = {};
+  pokemonId!: number;
   pokemonState=false;
   constructor(
     private pokemData: PokeDataService,
@@ -27,17 +28,8 @@ export class PokemonesComponent {
     this.pokemonState=!this.pokemonState;
   }
   pokeDetail(pokemon: any) {
-    console.log(pokemon);
     const id = this.extractPokemonIdFromUrl(pokemon.url);
-    this.pokemonState=!this.pokemonState;
-    // console.log(this.pokemonState);
-    // console.log(id);
-    if (id !== -1) {
-      this.pokemData.getPokemon(id).subscribe(detail => {
-        this.pokemon = detail;
-        console.log(this.pokemon);
-      });
-    }
+    this.pokemonId = id;  // Asume que tienes una variable pokemonId en tu componente
   }
 
   extractPokemonIdFromUrl(url: string): number {
