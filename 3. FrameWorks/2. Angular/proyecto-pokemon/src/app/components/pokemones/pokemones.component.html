@@ -6,8 +6,7 @@
             <p class="pokemon-name">{{ pokemonimp.name }}</p>
         </div>
         <button (click)="pokeDetail(pokemonimp)">Ver Poke detalle</button>
-        <button (click)="agregarAFavoritos(pokemon)">Agregar a Favoritos</button>
-        <button (click)="mostrarFormularioEdicion(pokemon)">Editar</button>
+        <button (click)="agregarAFavoritos(pokemonimp)">Agregar a Favoritos</button>
     </div>
 </div>
 <div *ngIf="pokemonState" class="pokemon-detail" [class.pokedetail-active]="pokemonState">

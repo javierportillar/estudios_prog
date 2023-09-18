@@ -30,7 +30,9 @@ export class ReqAPIService {
 }
 agregarAFavoritos(pokemon: any): Observable<any> {
   const url = 'http://localhost:8000/v1/favoritos';
-  return this.http.post(url, pokemon);
+  console.log({pokemon});
+
+  return this.http.post(url, {name:pokemon.name});
 }
 actualizarPokemonFavorito(pokemon: any): Observable<any> {
   const url = `http://localhost:3000/favoritos/${pokemon.id}`; // Reemplaza 'TU_API_URL' con la URL de tu API

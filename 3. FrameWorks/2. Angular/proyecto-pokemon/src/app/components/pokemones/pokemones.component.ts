@@ -59,6 +59,8 @@ export class PokemonesComponent {
   // En PokemonesComponent
 
 agregarAFavoritos(pokemon: any) {
+  console.log('Componente agregarAFavoritos',{pokemon});
+
   this.pokemData.agregarPokemonAFavoritos(pokemon).subscribe(response => {
     console.log('Pokémon agregado a favoritos:', response);
   });

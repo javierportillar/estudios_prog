@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ReqAPIService } from "./req-api.service";
+import { Pokemon } from '../models/pokemon.model';  // Ajusta la ruta según sea necesario
 import { Observable, forkJoin } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
@@ -13,22 +14,13 @@ export class PokeDataService {
 
   pokemons: any[] = []; // <-- Array para almacenar los datos de los Pokémon
 
-  getPokemones(): Observable<any[]> {
+  getPokemones(): Observable<Pokemon[]> {
     return this.apiReq.getPokeApi().pipe(
       map(data => {
-        let pokemonsDetails: any[] = [];
-        for (let pokemon of data.results) {
-          this.apiReq.getPokeDetail(pokemon.url).subscribe(detallePokemon => {
-            pokemonsDetails.push({
-              name: pokemon.name,
-              url:pokemon.url,
-              details: detallePokemon,
-              image: detallePokemon.sprites.other.dream_world.front_default,
-              id:detallePokemon.id,
-            });
-          });
-        }
-        return pokemonsDetails;
+        return data.results.map((pokemon: Pokemon) => ({
+          name: pokemon.name,
+          url: pokemon.url
+        }));
       })
     );
   }
