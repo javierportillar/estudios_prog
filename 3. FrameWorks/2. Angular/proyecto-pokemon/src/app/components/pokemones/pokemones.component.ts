@@ -27,9 +27,12 @@ export class PokemonesComponent {
   togglePokeState(){
     this.pokemonState=!this.pokemonState;
   }
-  pokeDetail(pokemon: any) {
+  pokeDetail(pokemon: any) { //Desde aquí hay que mandar id a pokemon-detail
     const id = this.extractPokemonIdFromUrl(pokemon.url);
     this.pokemonId = id;  // Asume que tienes una variable pokemonId en tu componente
+    // this.pokemonId.
+    console.log(this.pokemonId);
+    this.pokemonState=true;
   }
 
   extractPokemonIdFromUrl(url: string): number {

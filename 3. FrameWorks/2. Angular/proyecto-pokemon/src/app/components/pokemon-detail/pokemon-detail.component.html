@@ -1,5 +1,7 @@
-<div class="pokemon-detail">
+<div *ngIf="pokemonState" class="pokemon-detail" >
   <div class="detail-content">
+      <!-- <span class="close-button" (click)="togglePokeState()">X</span> -->
+      <span class="close-button">X</span>
       <h1>Nombre: {{pokemon?.name}}</h1>
       <h2>Numero de movimientos: {{pokemon?.moves?.length}}</h2>
       <h2>Pesa: {{pokemon?.weight}}Lb</h2>

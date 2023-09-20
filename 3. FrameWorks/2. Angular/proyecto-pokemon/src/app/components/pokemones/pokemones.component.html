@@ -9,5 +9,4 @@
         <button (click)="agregarAFavoritos(pokemonimp)">Agregar a Favoritos</button>
     </div>
 </div>
-<app-pokemon-detail [pokemonId]="pokemonId"></app-pokemon-detail>
-
+<app-pokemon-detail *ngIf="pokemonState" [pokemonId]="pokemonId"></app-pokemon-detail>
