@@ -10,15 +10,10 @@ export class PokemonesComponent {
   id = [];
   pokemons: any[] = [];
   pokemon: any = {};
-<<<<<<< HEAD
-  pokemonId!: number;
-  pokemonState=false;
-=======
   pokemonState = false;
   favoritos: any[] = [];
   favoritosState = false;  // Nuevo estado para manejar el despliegue de la lista de favoritos
 
->>>>>>> vToge
   constructor(
     private pokemData: PokeDataService,
   ) { }
@@ -37,14 +32,6 @@ export class PokemonesComponent {
   togglePokeState() {
     this.pokemonState = !this.pokemonState;
   }
-<<<<<<< HEAD
-  pokeDetail(pokemon: any) { //Desde aquí hay que mandar id a pokemon-detail
-    const id = this.extractPokemonIdFromUrl(pokemon.url);
-    this.pokemonId = id;  // Asume que tienes una variable pokemonId en tu componente
-    // this.pokemonId.
-    console.log(this.pokemonId);
-    this.pokemonState=true;
-=======
 
   pokeDetail(pokemon: any) {
     console.log(pokemon);
@@ -58,7 +45,6 @@ export class PokemonesComponent {
         console.log(this.pokemon);
       });
     }
->>>>>>> vToge
   }
 
   extractPokemonIdFromUrl(url: string): number {

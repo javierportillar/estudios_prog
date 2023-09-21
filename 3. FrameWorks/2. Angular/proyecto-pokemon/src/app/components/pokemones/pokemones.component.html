@@ -18,9 +18,6 @@
         <button (click)="agregarAFavoritos(pokemon)">Agregar a Favoritos</button>
     </div>
 </div>
-<<<<<<< HEAD
-<app-pokemon-detail *ngIf="pokemonState" [pokemonId]="pokemonId"></app-pokemon-detail>
-=======
 <div *ngIf="pokemonState" class="pokemon-detail" [class.pokedetail-active]="pokemonState">
     <div class="detail-content">
         <span class="close-button" (click)="togglePokeState()">X</span>
@@ -33,4 +30,3 @@
         <img *ngIf="pokemon && pokemon.sprites && pokemon.sprites.other && pokemon.sprites.other.dream_world && pokemon.sprites.other.dream_world.front_default" [src]="pokemon.sprites.other.dream_world.front_default" alt="">
       </div>
 </div>
->>>>>>> vToge
