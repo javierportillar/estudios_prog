@@ -7,9 +7,13 @@ import { PokeDataService } from "../../services/poke-data.service";
   styleUrls: ['./pokemones.component.scss']
 })
 export class PokemonesComponent {
+  id = [];
   pokemons: any[] = [];
   pokemon: any = {};
-  pokemonState=false;
+  pokemonState = false;
+  favoritos: any[] = [];
+  favoritosState = false;  // Nuevo estado para manejar el despliegue de la lista de favoritos
+
   constructor(
     private pokemData: PokeDataService,
   ) { }
@@ -22,14 +26,17 @@ export class PokemonesComponent {
   }
   ngOnInit(): void {
     this.getAllPokemones();
+    this.obtenerFavoritos();
+
   }
-  togglePokeState(){
-    this.pokemonState=!this.pokemonState;
+  togglePokeState() {
+    this.pokemonState = !this.pokemonState;
   }
+
   pokeDetail(pokemon: any) {
     console.log(pokemon);
     const id = this.extractPokemonIdFromUrl(pokemon.url);
-    this.pokemonState=!this.pokemonState;
+    this.pokemonState = !this.pokemonState;
     // console.log(this.pokemonState);
     // console.log(id);
     if (id !== -1) {
@@ -56,27 +63,22 @@ export class PokemonesComponent {
     return +id;
   }
 
-  // En PokemonesComponent
+  toggleFavoritosState() {
+    this.favoritosState = !this.favoritosState;
+  }
+  agregarAFavoritos(pokemon: any) {
+    console.log('Componente agregarAFavoritos', { pokemon },);
+    const id = this.extractPokemonIdFromUrl(pokemon.url);
+    this.pokemData.agregarPokemonAFavoritos(pokemon,id).subscribe(response => {
+      console.log('Pokémon agregado a favoritos:', response);
+    });
+  }
 
-agregarAFavoritos(pokemon: any) {
-  console.log('Componente agregarAFavoritos',{pokemon});
-
-  this.pokemData.agregarPokemonAFavoritos(pokemon).subscribe(response => {
-    console.log('Pokémon agregado a favoritos:', response);
-  });
-}
-
-mostrarFormularioEdicion(pokemon: any) {
-  // Aquí puedes mostrar un formulario para editar la información del Pokémon
-  // Una vez que el usuario haya realizado los cambios y enviado el formulario, llama al siguiente método:
-  this.actualizarInfoPokemon(pokemon);
-}
-
-actualizarInfoPokemon(pokemon: any) {
-  this.pokemData.actualizarInfoPokemonFavorito(pokemon).subscribe(response => {
-    console.log('Información del Pokémon actualizada:', response);
-  });
-}
+  obtenerFavoritos() {
+    this.pokemData.showPokeFav().subscribe(data => {
+      this.favoritos = data.datos;
+    });
+  }
 
 }
 //   this.pokemData.getPokemon(pokemon.id).subscribe(detail => {
