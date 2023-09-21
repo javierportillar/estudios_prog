@@ -8,6 +8,7 @@ let favoritos = [];  // Este array actuará como nuestra "base de datos" en memo
 router.post("/", (req, res) => {
   const data = req.body;
   favoritos.push(data);  // Almacenamos el nuevo Pokémon en el array
+  console.log(data);
   res.json({
     mensaje: "creado",
     datos: data,
