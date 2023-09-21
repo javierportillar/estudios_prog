@@ -10,6 +10,7 @@ router.post("/", (req, res) => {
 // const data = {nombre:'Javi'}
   console.log({data});
   favoritos.push(data);  // Almacenamos el nuevo Pokémon en el array
+  console.log(data);
   res.json({
     mensaje: "creado",
     datos: data

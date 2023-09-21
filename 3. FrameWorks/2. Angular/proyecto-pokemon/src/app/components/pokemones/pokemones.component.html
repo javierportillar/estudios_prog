@@ -1,12 +1,36 @@
+<button class="toggle-favoritos-button" (click)="toggleFavoritosState()">Favoritos</button>
+<div class="favoritos-list" *ngIf="favoritosState && favoritos.length > 0"> <!-- Usar favoritosState -->
+  <h3>Favoritos</h3>
+  <ul>
+    <li *ngFor="let fav of favoritos">
+      {{ fav.id }}.{{ fav.name }}
+    </li>
+  </ul>
+</div>
 <div class="pokemon-list">
-    <div *ngFor="let pokemonimp of pokemons" class="pokemon-item">
-        <img [src]="pokemonimp.image" alt="{{ pokemonimp.name }}" class="pokemon-image">
+    <div *ngFor="let pokemon of pokemons"class="pokemon-item">
+        <!-- <img [src]="pokemon.image" alt="{{ pokemon.name }}" class="pokemon-image"> -->
         <div class="id-general">
-            <h2 class="pokemon-id">{{ pokemonimp.id }}.</h2>
-            <p class="pokemon-name">{{ pokemonimp.name }}</p>
+          <!-- <h2 class="pokemon-id" *ngFor="let fav of favoritos">{{fav.id}}.</h2> -->
+            <p class="pokemon-name">{{ pokemon.name }}</p>
         </div>
-        <button (click)="pokeDetail(pokemonimp)">Ver Poke detalle</button>
-        <button (click)="agregarAFavoritos(pokemonimp)">Agregar a Favoritos</button>
+        <button (click)="pokeDetail(pokemon)">Ver Poke detalle</button>
+        <button (click)="agregarAFavoritos(pokemon)">Agregar a Favoritos</button>
     </div>
 </div>
+<<<<<<< HEAD
 <app-pokemon-detail *ngIf="pokemonState" [pokemonId]="pokemonId"></app-pokemon-detail>
+=======
+<div *ngIf="pokemonState" class="pokemon-detail" [class.pokedetail-active]="pokemonState">
+    <div class="detail-content">
+        <span class="close-button" (click)="togglePokeState()">X</span>
+        <h1>Nombre: {{pokemon?.name}}</h1>
+        <h2 class="pokemon-id">{{ pokemon.id }}.</h2>
+        <h2>Numero de movimientos: {{pokemon?.moves?.length}}</h2>
+        <h2>Pesa: {{pokemon?.weight}}Lb</h2>
+        <h2>Estatura: {{pokemon?.height}}cm </h2>
+        <h2 *ngFor="let tipos of pokemon?.types">Tipo de pokemon: {{tipos.type.name}}</h2>
+        <img *ngIf="pokemon && pokemon.sprites && pokemon.sprites.other && pokemon.sprites.other.dream_world && pokemon.sprites.other.dream_world.front_default" [src]="pokemon.sprites.other.dream_world.front_default" alt="">
+      </div>
+</div>
+>>>>>>> vToge
