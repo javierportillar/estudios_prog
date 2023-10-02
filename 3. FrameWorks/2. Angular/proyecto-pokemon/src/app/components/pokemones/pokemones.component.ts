@@ -12,7 +12,7 @@ export class PokemonesComponent {
   pokemon: any = {};
   pokemonState = false;
   favoritos: any[] = [];
-  favoritosState = false;  // Nuevo estado para manejar el despliegue de la lista de favoritos
+  favoritosState = false;
 
   constructor(
     private pokemData: PokeDataService,
