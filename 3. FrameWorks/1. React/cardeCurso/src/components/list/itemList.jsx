@@ -15,7 +15,7 @@ export const ItemList = () => {
                 items.map((item, indice) => {  // Funcionamiento de .map
                     console.log(item, indice);
                     return (
-                        <Item item={item} key={indice}></Item>
+                        <Item item={item} key={indice} indice={indice}></Item>
                     )
                 })
             }
