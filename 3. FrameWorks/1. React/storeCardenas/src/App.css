@@ -1,0 +1,136 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Propios */
+/* App.css */
+
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  height: 35px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #333;
+  /* Color de fondo */
+  color: #fff;
+  /* Color de texto */
+}
+
+/* Si necesitas un estilo adicional para los spans, puedes añadirlo también, por ejemplo: */
+.header span:first-child {
+  font-weight: bold;
+  margin-left: 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header span:last-child {
+  font-weight: bold;
+  margin-right: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  /* ... otros estilos que desees ... */
+}
+.header span:first-child:hover,span:last-child:hover{
+  background-color: #555;
+  border-radius: 5px;
+  padding: 5px;
+  color: #000;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.product-list{
+  display: flex;
+  justify-items: center;
+  width: 50%;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.product-list-item{
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  align-items: center;
+  justify-content: center;
+}
+.header button{
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.header .tienda{
+  padding-left: 0px;
+  margin-left: 0px;
+  left: 40px;
+  top: 13px;
+  position: absolute;
+}
+
+
+/* .product-list-item span{
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+} */
